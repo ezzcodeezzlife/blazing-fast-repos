@@ -9,6 +9,10 @@
   margin-right: auto;
 }
 
-#homepagebutton{
+#homepagebutton {
   margin-top: 10px;
+}
+
+#randombutton {
+  margin-bottom: 4vh;
 }

@@ -1,7 +1,6 @@
-test with react and  github api 
+test with react and github api
 
 https://blazingfastrepos.netlify.app/
-
 
 # Getting Started with Create React App
 

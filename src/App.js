@@ -8,18 +8,19 @@ import {
   Container,
   Spinner,
   Badge,
+  Jumbotron,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Highlighter from "react-highlight-words";
-import { GoMarkGithub, GoGlobe } from "react-icons/go";
-import header from './header.JPG'; // Tell webpack thits JS file uses this image
-import GithubCorner from 'react-github-corner';
+import { GoMarkGithub, GoGlobe, GoBeaker } from "react-icons/go";
+import header from "./header.JPG"; // Tell webpack thits JS file uses this image
+import GithubCorner from "react-github-corner";
 
 function Header() {
   return (
     <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="#">✨ blazing fast ✨ repos</Navbar.Brand>
+        <Navbar.Brand>✨ blazing fast ✨ repos</Navbar.Brand>
       </Container>
     </Navbar>
   );
@@ -42,6 +43,17 @@ function App() {
       });
   };
 
+  const randomRepo = () => {
+    const repoarray = [];
+    repos.map((repo) => {
+      repoarray.push(repo.html_url);
+    });
+    var randomrepo = repoarray[Math.floor(Math.random() * repoarray.length)];
+    return randomrepo;
+  };
+
+  console.log(randomRepo());
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -52,6 +64,7 @@ function App() {
       <GithubCorner href="https://github.com/ezzcodeezzlife/blazing-fast-repos" />
       <img src={header} id="headerimg" alt="Logo" />
       <br></br>
+
       <center>
         {loading ? (
           <Spinner animation="border" role="status">
@@ -59,10 +72,18 @@ function App() {
           </Spinner>
         ) : (
           <div id="content">
+            <h5>Get a random ✨blazing fast✨ repo: </h5>
+            <Button
+              id="randombutton"
+              variant="outline-primary"
+              href={randomRepo()}
+            >
+              {" "}
+              <GoBeaker></GoBeaker> Random
+            </Button>{" "}
             {repos.map((repo) => (
               <>
                 <Card>
-                  
                   <Card.Body>
                     <Card.Title> {repo.name}</Card.Title>
                     <Card.Text>
@@ -78,10 +99,18 @@ function App() {
                         textToHighlight={repo.description}
                       />
                     </Card.Text>
-                    <Button  id="homepagebutton"  href={repo.html_url} variant="primary">
+                    <Button
+                      id="homepagebutton"
+                      href={repo.html_url}
+                      variant="primary"
+                    >
                       <GoMarkGithub></GoMarkGithub> GitHub
                     </Button>{" "}
-                    <Button id="homepagebutton" href={repo.homepage} variant="secondary">
+                    <Button
+                      id="homepagebutton"
+                      href={repo.homepage}
+                      variant="secondary"
+                    >
                       <GoGlobe></GoGlobe> Homepage
                     </Button>
                   </Card.Body>
@@ -97,7 +126,6 @@ function App() {
           </div>
         )}
       </center>
-      
     </>
   );
 }
