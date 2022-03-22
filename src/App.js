@@ -9,7 +9,7 @@ function Header() {
   return ( 
     <Navbar bg="light">
     <Container>
-      <Navbar.Brand href="#">✨Blazingly fast✨repos</Navbar.Brand>
+      <Navbar.Brand href="#">✨blazing fast✨repos</Navbar.Brand>
     </Container>
   </Navbar>);
   
