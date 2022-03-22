@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Highlighter from "react-highlight-words";
-import { GoMarkGithub } from "react-icons/go";
+import { GoMarkGithub, GoGlobe } from "react-icons/go";
 
 function Header() {
   return (
@@ -59,9 +59,8 @@ function App() {
               <>
                 <Card>
                   <Card.Header>
-                   
-                    <Badge bg="secondary"> ⭐ {repo.stargazers_count}</Badge> ▪️ {" "}
-                     <Badge bg="secondary"> 🍴 {repo.forks_count}</Badge> ▪️ {" "}
+                    <Badge bg="secondary"> ⭐ {repo.stargazers_count}</Badge> ▪️{" "}
+                    <Badge bg="secondary"> 🍴 {repo.forks_count}</Badge> ▪️{" "}
                     <Badge bg="info">{repo.language}</Badge>
                   </Card.Header>
                   <Card.Body>
@@ -79,9 +78,11 @@ function App() {
                         textToHighlight={repo.description}
                       />
                     </Card.Text>
-
                     <Button href={repo.html_url} variant="primary">
                       <GoMarkGithub></GoMarkGithub> GitHub
+                    </Button>{" "}
+                    <Button href={repo.homepage} variant="secondary">
+                      <GoGlobe></GoGlobe> Homepage
                     </Button>
                   </Card.Body>
                 </Card>
