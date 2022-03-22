@@ -12,7 +12,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Highlighter from "react-highlight-words";
 import { GoMarkGithub, GoGlobe } from "react-icons/go";
-import header from './header.JPG'; // Tell webpack this JS file uses this image
+import header from './header.JPG'; // Tell webpack thits JS file uses this image
 import GithubCorner from 'react-github-corner';
 
 function Header() {
