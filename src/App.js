@@ -12,12 +12,14 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Highlighter from "react-highlight-words";
 import { GoMarkGithub, GoGlobe } from "react-icons/go";
+import header from './header.JPG'; // Tell webpack this JS file uses this image
+import GithubCorner from 'react-github-corner';
 
 function Header() {
   return (
     <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="#">✨blazing fast✨repos</Navbar.Brand>
+        <Navbar.Brand href="#">✨ blazing fast ✨ repos</Navbar.Brand>
       </Container>
     </Navbar>
   );
@@ -47,6 +49,8 @@ function App() {
   return (
     <>
       <Header></Header>
+      <GithubCorner href="https://github.com/ezzcodeezzlife/blazing-fast-repos" />
+      <img src={header} id="headerimg" alt="Logo" />
       <br></br>
       <center>
         {loading ? (
@@ -58,11 +62,7 @@ function App() {
             {repos.map((repo) => (
               <>
                 <Card>
-                  <Card.Header>
-                    <Badge bg="secondary"> ⭐ {repo.stargazers_count}</Badge> ▪️{" "}
-                    <Badge bg="secondary"> 🍴 {repo.forks_count}</Badge> ▪️{" "}
-                    <Badge bg="info">{repo.language}</Badge>
-                  </Card.Header>
+                  
                   <Card.Body>
                     <Card.Title> {repo.name}</Card.Title>
                     <Card.Text>
@@ -78,13 +78,18 @@ function App() {
                         textToHighlight={repo.description}
                       />
                     </Card.Text>
-                    <Button href={repo.html_url} variant="primary">
+                    <Button  id="homepagebutton"  href={repo.html_url} variant="primary">
                       <GoMarkGithub></GoMarkGithub> GitHub
                     </Button>{" "}
-                    <Button href={repo.homepage} variant="secondary">
+                    <Button id="homepagebutton" href={repo.homepage} variant="secondary">
                       <GoGlobe></GoGlobe> Homepage
                     </Button>
                   </Card.Body>
+                  <Card.Header>
+                    <Badge bg="secondary"> ⭐ {repo.stargazers_count}</Badge> ▪️{" "}
+                    <Badge bg="secondary"> 🍴 {repo.forks_count}</Badge> ▪️{" "}
+                    <Badge bg="info">{repo.language}</Badge>
+                  </Card.Header>
                 </Card>
                 <br></br>
               </>
@@ -92,6 +97,7 @@ function App() {
           </div>
         )}
       </center>
+      
     </>
   );
 }
