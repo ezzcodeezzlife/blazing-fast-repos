@@ -59,10 +59,9 @@ function App() {
               <>
                 <Card>
                   <Card.Header>
-                    {" "}
-                    ⭐ Stars:{" "}
-                    <Badge bg="secondary">{repo.stargazers_count}</Badge> ▪️ 🍴
-                    Forks: <Badge bg="secondary">{repo.forks_count}</Badge> ▪️{" "}
+                   
+                    <Badge bg="secondary"> ⭐ {repo.stargazers_count}</Badge> ▪️ {" "}
+                     <Badge bg="secondary"> 🍴 {repo.forks_count}</Badge> ▪️ {" "}
                     <Badge bg="info">{repo.language}</Badge>
                   </Card.Header>
                   <Card.Body>
