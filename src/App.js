@@ -15,6 +15,12 @@ import Highlighter from "react-highlight-words";
 import { GoMarkGithub, GoGlobe, GoBeaker } from "react-icons/go";
 import header from "./header.JPG"; // Tell webpack thits JS file uses this image
 import GithubCorner from "react-github-corner";
+import ReactGA from "react-ga4";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
+ReactGA.initialize("G-PG0Y3ZSSTJ");
+ReactGA.send("pageview");
 
 function Header() {
   return (
@@ -67,9 +73,56 @@ function App() {
 
       <center>
         {loading ? (
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
+          <>
+            <div id="content">
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+              <br></br>
+
+              <Card>
+                <Card.Body>
+                  <Card.Title> {<Skeleton />}</Card.Title>
+                  <Card.Text>
+                    <Skeleton />
+                  </Card.Text>
+                  <Skeleton />
+                </Card.Body>
+                <Card.Header>
+                  <Skeleton />
+                </Card.Header>
+              </Card>
+              <br></br>
+
+              <Card>
+                <Card.Body>
+                  <Card.Title> {<Skeleton />}</Card.Title>
+                  <Card.Text>
+                    <Skeleton />
+                  </Card.Text>
+                  <Skeleton />
+                </Card.Body>
+                <Card.Header>
+                  <Skeleton />
+                </Card.Header>
+              </Card>
+              <br></br>
+
+              <Card>
+                <Card.Body>
+                  <Card.Title> {<Skeleton />}</Card.Title>
+                  <Card.Text>
+                    <Skeleton />
+                  </Card.Text>
+                  <Skeleton />
+                </Card.Body>
+                <Card.Header>
+                  <Skeleton />
+                </Card.Header>
+              </Card>
+              <br></br>
+            </div>
+          </>
         ) : (
           <div id="content">
             <h5>Get a random ✨blazing fast✨ repo: </h5>

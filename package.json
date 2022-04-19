@@ -10,9 +10,12 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.1",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
+    "react-ga4": "^1.4.1",
     "react-github-corner": "^2.5.0",
     "react-highlight-words": "^0.17.0",
     "react-icons": "^4.3.1",
+    "react-loading-skeleton": "^3.1.0",
     "react-scripts": "5.0.0",
     "source-map-explorer": "^2.5.2",
     "web-vitals": "^2.1.4"
@@ -23,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "react-scripts build && netflify deploy --prod"
   },
   "eslintConfig": {
     "extends": [
