@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "eject": "react-scripts eject",
-    "deploy": "react-scripts build && netflify deploy --prod"
+    "deploy": "react-scripts build && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": [
